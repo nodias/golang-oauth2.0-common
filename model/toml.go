@@ -7,21 +7,10 @@ import (
 )
 
 type TomlConfig struct {
-	Title     string
-	Writer    writerinfo
+	Service   string
+	Logpaths  logpaths
 	Databases map[string]databases
 	Servers   map[string]servers
-	Logpaths  map[string]logpaths
-}
-
-type writerinfo struct {
-	Name string
-}
-
-type databases struct {
-	Server string
-	Port   string
-	Enable bool
 }
 
 type servers struct {
@@ -30,11 +19,21 @@ type servers struct {
 }
 
 type logpaths struct {
-	Path string
+	Logpath string
+}
+
+type databases struct {
+	Server string
+	Port   string
+	Enable bool
 }
 
 func (t *TomlConfig) New(path string) {
 	if _, err := toml.DecodeFile("config.toml", &t); err != nil {
 		fmt.Println(err)
 	}
+}
+
+func (t *TomlConfig) ApmServerUrl() string {
+	return fmt.Sprintf("%s%s", t.Servers["APM_TESTSERVER"].IP, t.Servers["APM_TESTSERVER"].PORT)
 }
