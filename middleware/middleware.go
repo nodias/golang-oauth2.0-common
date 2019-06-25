@@ -5,10 +5,11 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/nodias/go-ApmCommon/logger"
+	"go-ApmCommon/logger"
 )
 
 func NewLoggingMiddleware(path string) func(res http.ResponseWriter, req *http.Request, next http.HandlerFunc) {
+
 	return func(res http.ResponseWriter, req *http.Request, next http.HandlerFunc) {
 		// Logic to write request information, i.e. headers, user agent etc to a log file.
 		var log = logger.Log

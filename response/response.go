@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/nodias/go-ApmCommon/model"
+	"go-ApmCommon/model"
 )
 
 var ErrUserNotExist = errors.New("user not exist")
