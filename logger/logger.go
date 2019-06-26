@@ -9,9 +9,7 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-type MyLogger *logrus.Entry
-
-func NewMyLogger(req *http.Request) MyLogger {
+func NewMyLogger(req *http.Request) *logrus.Entry {
 	return Log.WithFields(apmlogrus.TraceContext(req.Context()))
 }
 
