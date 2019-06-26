@@ -34,8 +34,9 @@ func (t *TomlConfig) Load() {
 	var phase string
 	if len(os.Args) < 2 {
 		phase = "local"
+	} else {
+		phase = os.Args[1]
 	}
-	phase = os.Args[1]
 	fpath := fmt.Sprintf("config/%s/config.toml", phase)
 	if _, err := toml.DecodeFile(fpath, &t); err != nil {
 		fmt.Println(err)
