@@ -2,7 +2,6 @@ package model
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/BurntSushi/toml"
 )
@@ -29,15 +28,9 @@ type databases struct {
 	Enable bool
 }
 
-// TomlConfig.Load is a function, select config with args
-func (t *TomlConfig) Load() {
-	var phase string
-	if len(os.Args) < 2 { //flag
-		phase = "local"
-	} else {
-		phase = os.Args[1]
-	}
-	fpath := fmt.Sprintf("config/%s/config.toml", phase) //주소 없애기
+func (t *TomlConfig) Load(cp string) {
+	cmdargs := GetCmdargs()
+	fpath := fmt.Sprintf(cp, cmdargs.Phase)
 	if _, err := toml.DecodeFile(fpath, &t); err != nil {
 		fmt.Println(err)
 	}
