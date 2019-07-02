@@ -16,7 +16,6 @@ func NewLoggingMiddleware(path string) func(res http.ResponseWriter, req *http.R
 		if err != nil {
 			panic(err)
 		}
-		defer fpLog.Close()
 		multiWriter := io.MultiWriter(fpLog, os.Stdout)
 		log.SetOutput(multiWriter)
 		next(res, req)
