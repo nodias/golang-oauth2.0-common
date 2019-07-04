@@ -30,6 +30,7 @@ type databases struct {
 
 func (t *TomlConfig) Load(cp string) {
 	cmdargs := GetCmdargs()
+	fmt.Println(cmdargs)
 	fpath := fmt.Sprintf(cp, cmdargs.Phase)
 	if _, err := toml.DecodeFile(fpath, &t); err != nil {
 		fmt.Println(err)
