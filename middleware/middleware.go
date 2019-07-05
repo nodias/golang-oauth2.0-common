@@ -11,7 +11,7 @@ import (
 func NewLoggingMiddleware(path string) func(res http.ResponseWriter, req *http.Request, next http.HandlerFunc) {
 	return func(res http.ResponseWriter, req *http.Request, next http.HandlerFunc) {
 		// Logic to write request information, i.e. headers, user agent etc to a log file.
-		var log = logger.Log
+		var log = logger.GetLogger()
 		fpLog, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 		if err != nil {
 			panic(err)

@@ -25,12 +25,12 @@ func init() {
 }
 
 //singleton
-var instance *cmdargs
-var once sync.Once
+var insCmdargs *cmdargs
+var onceCmdargs sync.Once
 
 func GetCmdargs() *cmdargs {
-	once.Do(func() {
-		instance = &ca
+	onceCmdargs.Do(func() {
+		insCmdargs = &ca
 	})
-	return instance
+	return insCmdargs
 }
