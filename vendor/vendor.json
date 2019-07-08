@@ -75,6 +75,24 @@
 			"revisionTime": "2019-02-26T22:47:05Z"
 		},
 		{
+			"checksumSHA1": "usdc5x/cnYgzmukXgSFzw7wf9Vk=",
+			"path": "github.com/lib/pq",
+			"revision": "2ff3cb3adc01768e0a552b3a02575a6df38a9bea",
+			"revisionTime": "2019-05-07T19:18:18Z"
+		},
+		{
+			"checksumSHA1": "QPjV8nrnzjkHGgLYwlqYCOSbwH4=",
+			"path": "github.com/lib/pq/oid",
+			"revision": "2ff3cb3adc01768e0a552b3a02575a6df38a9bea",
+			"revisionTime": "2019-05-07T19:18:18Z"
+		},
+		{
+			"checksumSHA1": "O3X0xRekyBbu23qIQdhv1jKEpf0=",
+			"path": "github.com/lib/pq/scram",
+			"revision": "2ff3cb3adc01768e0a552b3a02575a6df38a9bea",
+			"revisionTime": "2019-05-07T19:18:18Z"
+		},
+		{
 			"checksumSHA1": "CUU7ZZtxuc1mpbM8XKrSTNiy/yM=",
 			"path": "github.com/pkg/errors",
 			"revision": "27936f6d90f9c8e1145f11ed52ffffbfdb9e0af7",
@@ -177,6 +195,18 @@
 			"revisionTime": "2019-06-20T14:17:27Z"
 		},
 		{
+			"checksumSHA1": "j4+gXBLdzUl0j9O8RdFq7BQvZJ8=",
+			"path": "go.elastic.co/apm/internal/sqlscanner",
+			"revision": "51ad73b754d23a5c962e62cc96da8db863794553",
+			"revisionTime": "2019-06-20T14:17:27Z"
+		},
+		{
+			"checksumSHA1": "OMIS3crJTg8gITF46XiUEnLx3CE=",
+			"path": "go.elastic.co/apm/internal/sqlutil",
+			"revision": "51ad73b754d23a5c962e62cc96da8db863794553",
+			"revisionTime": "2019-06-20T14:17:27Z"
+		},
+		{
 			"checksumSHA1": "WK6C1wiNFq5tf3mKJTETx8fTt/k=",
 			"path": "go.elastic.co/apm/internal/wildcard",
 			"revision": "51ad73b754d23a5c962e62cc96da8db863794553",
@@ -191,6 +221,18 @@
 		{
 			"checksumSHA1": "i5XXbhOfoUFuXdJc1/ic0dM//c0=",
 			"path": "go.elastic.co/apm/module/apmlogrus",
+			"revision": "51ad73b754d23a5c962e62cc96da8db863794553",
+			"revisionTime": "2019-06-20T14:17:27Z"
+		},
+		{
+			"checksumSHA1": "e8uq246FqPiJXM+v5Q6ANJfhQto=",
+			"path": "go.elastic.co/apm/module/apmsql",
+			"revision": "51ad73b754d23a5c962e62cc96da8db863794553",
+			"revisionTime": "2019-06-20T14:17:27Z"
+		},
+		{
+			"checksumSHA1": "YaG/XynjF10+28/ph0VIprc0/SU=",
+			"path": "go.elastic.co/apm/module/apmsql/pq",
 			"revision": "51ad73b754d23a5c962e62cc96da8db863794553",
 			"revisionTime": "2019-06-20T14:17:27Z"
 		},
