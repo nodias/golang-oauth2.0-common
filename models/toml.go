@@ -3,7 +3,7 @@ package models
 import (
 	"fmt"
 	"github.com/sirupsen/logrus"
-	"go-ApmCommon/internal"
+	"github.com/nodias/golang-oauth2.0-common/internal"
 	"sync"
 
 	"github.com/BurntSushi/toml"

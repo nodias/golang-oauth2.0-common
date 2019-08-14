@@ -4,15 +4,14 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"github.com/nodias/golang-oauth2.0-common/models"
+	"github.com/nodias/golang-oauth2.0-common/shared/logger"
 	"github.com/sirupsen/logrus"
-	"go-ApmCommon/models"
-	"go-ApmCommon/shared/logger"
-	"go.elastic.co/apm/module/apmsql"
-	_ "go.elastic.co/apm/module/apmsql/pq"
+	_ "github.com/lib/pq"
 )
 
 var config models.TomlConfig
-var log *logrus.Entry
+var log *logrus.Logger
 
 func Init() {
 	config = *models.GetConfig()
@@ -39,7 +38,7 @@ func NewOpenDB() *sql.DB {
 		config.Databases["postgres"].Server,
 		config.Databases["postgres"].Port,
 	)
-	db, err := apmsql.Open("postgres", dbInfo)
+	db, err := sql.Open("postgres", dbInfo)
 	if err != nil {
 		log.Fatal(err)
 		panic("Invalid DB config")

@@ -2,14 +2,12 @@ package logger
 
 import (
 	"context"
-	"go-ApmCommon/models"
+	"github.com/nodias/golang-oauth2.0-common/models"
 	"io"
 	"os"
 	"sync"
 
 	"github.com/sirupsen/logrus"
-	"go.elastic.co/apm"
-	"go.elastic.co/apm/module/apmlogrus"
 )
 
 var log *logrus.Logger
@@ -38,8 +36,6 @@ func Init() {
 	}
 	multiWriter := io.MultiWriter(fpLog, os.Stdout)
 	log.SetOutput(multiWriter)
-	apm.DefaultTracer.SetLogger(log)
-	log.AddHook(&apmlogrus.Hook{})
 	log.Debug("logger init - success")
 }
 
@@ -54,6 +50,6 @@ func Get() *logrus.Logger {
 	return instance
 }
 
-func New(ctx context.Context) *logrus.Entry {
-	return Get().WithFields(apmlogrus.TraceContext(ctx))
+func New(ctx context.Context) *logrus.Logger {
+	return Get()
 }
